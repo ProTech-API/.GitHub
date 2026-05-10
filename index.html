@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProTech – Mapeamento do Ecossistema Industrial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #f7f6f3; --surface: #ffffff; --border: #e4e2db; --border-strong: #c8c5bc;
+      --text-primary: #18180f; --text-secondary: #65635a; --text-muted: #9e9b92;
+      --accent: #1a5c3e; --accent-hover: #14472f; --accent-light: #e6f2ec;
+      --accent-mid: #27895d; --accent-border: #aad4be; --tag-bg: #eeecea;
+      --radius: 10px; --radius-sm: 6px; --radius-pill: 999px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text-primary); font-size: 16px; line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(247,246,243,0.94); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); padding: 0 2.5rem;
+      height: 56px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; color: var(--accent); letter-spacing: 0.05em; text-decoration: none; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: color .15s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-gh { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text-primary); text-decoration: none; border: 1px solid var(--border-strong); padding: 5px 14px; border-radius: var(--radius-sm); transition: background .15s; }
+    .nav-gh:hover { background: var(--surface); }
+    .nav-gh svg { width: 15px; height: 15px; }
+
+    .hero { max-width: 880px; margin: 0 auto; padding: 80px 2rem 68px; border-bottom: 1px solid var(--border); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 7px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent); background: var(--accent-light); border: 1px solid var(--accent-border); border-radius: var(--radius-pill); padding: 4px 13px; margin-bottom: 28px; }
+    .hero-badge::before { content:''; width:6px; height:6px; border-radius:50%; background: var(--accent-mid); }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.14; letter-spacing: -0.025em; margin-bottom: 20px; }
+    h1 strong { font-weight: 500; }
+    .hero-sub { font-size: 17px; color: var(--text-secondary); max-width: 580px; margin-bottom: 14px; line-height: 1.75; }
+    .hero-quote { font-style: italic; font-size: 14px; color: var(--text-muted); margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all .15s; border: 1px solid transparent; }
+    .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .btn-primary { background: var(--text-primary); color: #fff; }
+    .btn-primary:hover { background: #2e2e1e; }
+    .btn-secondary { background: transparent; color: var(--text-primary); border-color: var(--border-strong); }
+    .btn-secondary:hover { background: var(--surface); }
+
+    section { max-width: 880px; margin: 0 auto; padding: 60px 2rem; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    .sec-label { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    h2 { font-size: 1.45rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 8px; }
+    .sec-desc { font-size: 15px; color: var(--text-secondary); max-width: 620px; margin-bottom: 28px; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .acard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; }
+    .acard-icon { width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--accent-light); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+    .acard-icon svg { width: 17px; height: 17px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .acard h3 { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+    .acard p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.6; }
+
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px,1fr)); gap: 12px; }
+    .tcard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; transition: border-color .15s; }
+    .tcard:hover { border-color: var(--border-strong); }
+    .ticon { width: 36px; height: 36px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 19px; }
+    .tcard-name { font-size: 14px; font-weight: 500; }
+    .tcard-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+    .ttag { display: inline-block; font-size: 11px; font-family: 'DM Mono', monospace; background: var(--tag-bg); color: var(--text-secondary); border-radius: 4px; padding: 2px 7px; align-self: flex-start; }
+
+    .metrics-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
+    .mcard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 18px; }
+    .mval { font-size: 2rem; font-weight: 300; letter-spacing: -0.025em; line-height: 1; margin-bottom: 5px; }
+    .mval em { font-style: normal; font-weight: 500; font-size: 1rem; color: var(--accent-mid); }
+    .mlabel { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text-muted); letter-spacing: 0.04em; }
+    .chart-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 22px; }
+    .chart-title { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text-muted); letter-spacing: 0.04em; margin-bottom: 18px; }
+    .bars { display: flex; align-items: flex-end; gap: 9px; height: 110px; }
+    .bg { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; }
+    .bar { width: 100%; border-radius: 4px 4px 0 0; background: var(--accent-light); border: 1px solid var(--accent-border); transition: background .2s; }
+    .bar.hi { background: var(--accent-mid); border-color: var(--accent); }
+    .bg:hover .bar { background: var(--accent-mid); border-color: var(--accent); }
+    .blabel { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--text-muted); text-align: center; }
+    .chart-note { font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 12px; }
+
+    .sprints-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .sprints-table th { text-align: left; font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding: 0 12px 10px; border-bottom: 1px solid var(--border); }
+    .sprints-table td { padding: 13px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: middle; }
+    .sprints-table tr:last-child td { border-bottom: none; }
+    .sprints-table td:first-child { font-weight: 500; color: var(--text-primary); }
+    .badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-family: 'DM Mono', monospace; border-radius: var(--radius-pill); padding: 3px 10px; font-weight: 500; }
+    .badge::before { content:''; width:5px; height:5px; border-radius:50%; }
+    .badge-done { background: var(--accent-light); color: var(--accent); }
+    .badge-done::before { background: var(--accent-mid); }
+    .badge-todo { background: var(--tag-bg); color: var(--text-secondary); }
+    .badge-todo::before { background: var(--text-muted); }
+    .sprint-link { color: var(--accent); text-decoration: none; font-size: 13px; }
+    .sprint-link:hover { text-decoration: underline; }
+
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 12px; }
+    .tmcard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 18px; display: flex; flex-direction: column; gap: 10px; }
+    .avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--accent-light); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 500; color: var(--accent); }
+    .tm-name { font-size: 14px; font-weight: 500; }
+    .tm-role { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text-muted); letter-spacing: 0.03em; }
+    .tm-links { display: flex; gap: 8px; }
+    .tm-links a { font-size: 11px; color: var(--text-secondary); text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 3px 9px; transition: all .15s; }
+    .tm-links a:hover { color: var(--accent); border-color: var(--accent-border); background: var(--accent-light); }
+
+    .steps { display: flex; flex-direction: column; }
+    .step { display: grid; grid-template-columns: 36px 1fr; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .step:last-child { border-bottom: none; }
+    .stepnum { width: 26px; height: 26px; border-radius: 50%; background: var(--tag-bg); border: 1px solid var(--border-strong); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; color: var(--text-secondary); flex-shrink: 0; }
+    .step-body h3 { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+    .step-body p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.55; }
+    code { font-family: 'DM Mono', monospace; font-size: 12px; background: var(--tag-bg); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; color: var(--text-primary); }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 2rem; max-width: 880px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-brand { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--text-muted); }
+    .footer-brand strong { color: var(--accent); }
+    .footer-note { font-size: 12px; color: var(--text-muted); }
+
+    @media (max-width: 640px) {
+      .about-grid, .metrics-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">ProTech / API</a>
+  <ul class="nav-links">
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#tools">Tecnologias</a></li>
+    <li><a href="#results">Resultados</a></li>
+    <li><a href="#sprints">Sprints</a></li>
+    <li><a href="#team">Equipe</a></li>
+    <li><a href="#docs">Documentação</a></li>
+  </ul>
+  <a class="nav-gh" href="https://github.com/ProTech-API/.GitHub" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+    GitHub
+  </a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">FATEC · API 2025</div>
+  <h1><strong>ProTech</strong> — Mapeamento do<br>Ecossistema Industrial e de Serviços</h1>
+  <p class="hero-sub">Dashboard interativo em Power BI para análise do ecossistema industrial e de serviços de São José dos Campos e região, a partir dos dados da base RAIS.</p>
+  <p class="hero-quote">"Projetar um futuro com ética."</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="https://github.com/ProTech-API/.GitHub/blob/main/Dashboard%20ProTech%20-%201%C2%B0%20Sprint.pbix" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+      Ver Dashboard (.pbix)
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/ProTech-API/.GitHub/blob/main/Documenta%C3%A7%C3%A3o.pdf" target="_blank">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Documentação PDF
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/ProTech-API/.GitHub" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      Repositório
+    </a>
+  </div>
+</div>
+
+<section id="about">
+  <p class="sec-label">Sobre o Projeto</p>
+  <h2>Análise do ecossistema produtivo regional</h2>
+  <p class="sec-desc">Desenvolvido no contexto do Aprendizado por Projeto Integrado (API) da FATEC, com metodologia ágil SCRUM, entregando visualizações analíticas para apoiar a Secretaria de Desenvolvimento de São José dos Campos.</p>
+  <div class="about-grid">
+    <div class="acard">
+      <div class="acard-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M3 12h2M19 12h2M12 3v2M12 19v2"/></svg></div>
+      <h3>Objetivo Principal</h3>
+      <p>Mapear e analisar os principais setores industriais e de serviços de São José dos Campos, com indicadores econômicos e distribuição geográfica das empresas.</p>
+    </div>
+    <div class="acard">
+      <div class="acard-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <h3>Dados Utilizados</h3>
+      <p>Base RAIS (Relação Anual de Informações Sociais), tratada e transformada para geração de indicadores produtivos e econômicos da região.</p>
+    </div>
+    <div class="acard">
+      <div class="acard-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <h3>Produto Entregue</h3>
+      <p>Dashboard interativo no Power BI com painéis analíticos para comparação de setores, visualização geográfica e indicadores de desenvolvimento regional.</p>
+    </div>
+    <div class="acard">
+      <div class="acard-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+      <h3>Metodologia Ágil</h3>
+      <p>Desenvolvimento em sprints com SCRUM — Product Owner, Scrum Master e equipe de desenvolvimento, com entrega de MVPs a cada ciclo.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <p class="sec-label">Tecnologias Utilizadas</p>
+  <h2>Stack do projeto</h2>
+  <p class="sec-desc">Combinação de ferramentas de análise, visualização e gestão para construir o ecossistema analítico do ProTech.</p>
+  <div class="tools-grid">
+    <div class="tcard">
+      <div class="ticon" style="background:#f0f4ff;">📊</div>
+      <span class="tcard-name">Power BI</span>
+      <span class="tcard-desc">Dashboard interativo com visualizações e indicadores econômicos.</span>
+      <span class="ttag">visualização</span>
+    </div>
+    <div class="tcard">
+      <div class="ticon" style="background:#f0fff4;">🐍</div>
+      <span class="tcard-name">Python</span>
+      <span class="tcard-desc">Tratamento e análise dos dados RAIS via Google Colab.</span>
+      <span class="ttag">análise</span>
+    </div>
+    <div class="tcard">
+      <div class="ticon" style="background:#f0fff8;">📗</div>
+      <span class="tcard-name">Microsoft Excel</span>
+      <span class="tcard-desc">Estruturação e organização de planilhas de dados.</span>
+      <span class="ttag">dados</span>
+    </div>
+    <div class="tcard">
+      <div class="ticon" style="background:#f7f0ff;">🐙</div>
+      <span class="tcard-name">GitHub</span>
+      <span class="tcard-desc">Controle de versão, gestão de sprints e documentação.</span>
+      <span class="ttag">versionamento</span>
+    </div>
+    <div class="tcard">
+      <div class="ticon" style="background:#fff8f0;">📑</div>
+      <span class="tcard-name">PowerPoint</span>
+      <span class="tcard-desc">Apresentações dos MVPs e resultados de cada sprint.</span>
+      <span class="ttag">apresentação</span>
+    </div>
+    <div class="tcard">
+      <div class="ticon" style="background:#f0f6ff;">📝</div>
+      <span class="tcard-name">Word</span>
+      <span class="tcard-desc">Documentação técnica e relatórios do projeto.</span>
+      <span class="ttag">documentação</span>
+    </div>
+  </div>
+</section>
+
+<section id="results">
+  <p class="sec-label">Resultados</p>
+  <h2>Preview do Dashboard</h2>
+  <p class="sec-desc">Indicadores desenvolvidos para análise do ecossistema industrial e de serviços de São José dos Campos, com dados da base RAIS.</p>
+  <div class="metrics-row">
+    <div class="mcard">
+      <div class="mval">SJC <em>&amp; região</em></div>
+      <div class="mlabel">área de cobertura</div>
+    </div>
+    <div class="mcard">
+      <div class="mval">4 <em>sprints</em></div>
+      <div class="mlabel">ciclos de entrega</div>
+    </div>
+    <div class="mcard">
+      <div class="mval">8 <em>US</em></div>
+      <div class="mlabel">user stories no backlog</div>
+    </div>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">distribuição setorial · ecossistema industrial SJC (ilustrativo)</div>
+    <div class="bars">
+      <div class="bg"><div class="bar hi" style="height:90px"></div><span class="blabel">Ind.</span></div>
+      <div class="bg"><div class="bar" style="height:72px"></div><span class="blabel">Serv.</span></div>
+      <div class="bg"><div class="bar" style="height:60px"></div><span class="blabel">Tech</span></div>
+      <div class="bg"><div class="bar hi" style="height:80px"></div><span class="blabel">Log.</span></div>
+      <div class="bg"><div class="bar" style="height:48px"></div><span class="blabel">Saúde</span></div>
+      <div class="bg"><div class="bar" style="height:35px"></div><span class="blabel">Edu.</span></div>
+      <div class="bg"><div class="bar hi" style="height:65px"></div><span class="blabel">Aero.</span></div>
+      <div class="bg"><div class="bar" style="height:40px"></div><span class="blabel">Outros</span></div>
+    </div>
+    <p class="chart-note">* Representação ilustrativa — dados reais disponíveis no arquivo .pbix do repositório.</p>
+  </div>
+</section>
+
+<section id="sprints">
+  <p class="sec-label">Registro das Sprints</p>
+  <h2>Cronograma de entregas</h2>
+  <p class="sec-desc">Quatro sprints com entregas incrementais seguindo SCRUM, com MVP ao final de cada ciclo.</p>
+  <table class="sprints-table">
+    <thead>
+      <tr>
+        <th>Sprint</th><th>Previsão</th><th>Status</th><th>MVP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sprint 01</td><td>27/04/2026</td>
+        <td><span class="badge badge-done">concluído</span></td>
+        <td><a class="sprint-link" href="https://docs.google.com/document/d/1M5s7SU5bRekXxxLCeA3t_fk-9DoxTlX-LpxAY31qyZM/edit?usp=sharing" target="_blank">Ver MVP ↗</a></td>
+      </tr>
+      <tr>
+        <td>Sprint 02</td><td>18/05/2026</td>
+        <td><span class="badge badge-todo">a fazer</span></td>
+        <td><a class="sprint-link" href="https://github.com/ProTech-API/.GitHub/blob/main/MVP/sp2.md" target="_blank">Ver MVP ↗</a></td>
+      </tr>
+      <tr>
+        <td>Sprint 03</td><td>08/06/2026</td>
+        <td><span class="badge badge-todo">a fazer</span></td>
+        <td><a class="sprint-link" href="https://github.com/ProTech-API/.GitHub/blob/main/MVP/sp3.md" target="_blank">Ver MVP ↗</a></td>
+      </tr>
+      <tr>
+        <td>Feira de Soluções</td><td>18/06/2026</td>
+        <td><span class="badge badge-todo">a fazer</span></td>
+        <td><span style="font-size:13px;color:var(--text-muted);">Em breve</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section id="team">
+  <p class="sec-label">Equipe</p>
+  <h2>Time ProTech</h2>
+  <p class="sec-desc">Sete integrantes com papéis definidos — Product Owner, Scrum Master e equipe de desenvolvimento.</p>
+  <div class="team-grid">
+    <div class="tmcard">
+      <div class="avatar">GP</div>
+      <div><div class="tm-name">Guilherme C. Peratelli</div><div class="tm-role">Product Owner</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/guilherme-peratelli-0813242a9" target="_blank">LinkedIn</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">RN</div>
+      <div><div class="tm-name">Rodrigo de Paula Nagy</div><div class="tm-role">Scrum Master</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/rodrigo-nagy-a88955382/" target="_blank">LinkedIn</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">DS</div>
+      <div><div class="tm-name">Diogo S. F. Carneiro</div><div class="tm-role">Dev Group</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/santanadiogo/" target="_blank">LinkedIn</a><a href="https://diogosfcgithub.com/" target="_blank">GitHub</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">RA</div>
+      <div><div class="tm-name">Rafael Costa Alvorada</div><div class="tm-role">Dev Group</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/rafael-a-7008873b2/" target="_blank">LinkedIn</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">IF</div>
+      <div><div class="tm-name">Ian Fully da Costa</div><div class="tm-role">Dev Group</div></div>
+      <div class="tm-links"><a href="https://github.com/ProTech-API" target="_blank">GitHub</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">LG</div>
+      <div><div class="tm-name">Luís Guilherme Soares</div><div class="tm-role">Dev Group</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/luis-guilherme-soares" target="_blank">LinkedIn</a></div>
+    </div>
+    <div class="tmcard">
+      <div class="avatar">LJ</div>
+      <div><div class="tm-name">Leandro H. S. Jardins</div><div class="tm-role">Dev Group</div></div>
+      <div class="tm-links"><a href="https://www.linkedin.com/in/leandro-jardim-4440a3322" target="_blank">LinkedIn</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="docs">
+  <p class="sec-label">Documentação</p>
+  <h2>Como acessar e executar</h2>
+  <p class="sec-desc">Passos para clonar o repositório, abrir o dashboard e acessar os materiais completos do projeto.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="stepnum">01</div>
+      <div class="step-body">
+        <h3>Clonar o repositório</h3>
+        <p>No terminal, execute <code>git clone https://github.com/ProTech-API/.GitHub.git</code> para baixar todos os arquivos localmente.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="stepnum">02</div>
+      <div class="step-body">
+        <h3>Abrir o Dashboard no Power BI</h3>
+        <p>Instale o Power BI Desktop (gratuito). Abra o arquivo <code>Dashboard ProTech - 1° Sprint.pbix</code> na raiz do repositório para visualizar os painéis interativos.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="stepnum">03</div>
+      <div class="step-body">
+        <h3>Explorar os dados com Python</h3>
+        <p>Os scripts de tratamento de dados rodam no Google Colab. Acesse pelo link na documentação e execute as células para reproduzir a análise da base RAIS.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="stepnum">04</div>
+      <div class="step-body">
+        <h3>Consultar a documentação</h3>
+        <p>O arquivo <code>Documentação.pdf</code> contém a especificação técnica completa, o product backlog detalhado e os resultados obtidos em cada sprint.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="stepnum">05</div>
+      <div class="step-body">
+        <h3>Acompanhar as sprints</h3>
+        <p>Os MVPs de cada sprint estão linkados na seção acima. A pasta <code>/MVP</code> no repositório contém os arquivos de acompanhamento de progresso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-brand"><strong>ProTech</strong> · FATEC · API 2025</span>
+  <span class="footer-note"><a href="https://github.com/ProTech-API/.GitHub" target="_blank" style="color:var(--accent);text-decoration:none;">github.com/ProTech-API/.GitHub</a></span>
+</footer>
+
+</body>
+</html>
