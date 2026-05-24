@@ -9,6 +9,12 @@ Este projeto faz parte do Aprendizado por Projeto Integrado (API) da FATEC, meto
 
 No contexto deste projeto, a equipe ProTech desenvolve um dashboard interativo no Power BI para análise do ecossistema industrial e de serviços de São José dos Campos e região, utilizando dados da RAIS.
 
+
+> # 📸 - Acesse o nosso Dashboard interativo no App Power BI por este QR Code!
+
+<img width="190" height="217" alt="Dashboard - QR code" src="https://github.com/user-attachments/assets/862e2418-c27d-4e7e-8550-2aa8fb8d81e5" />
+
+
 # Índice
 
 - [📊 Projeto](#-projeto-mapeamento-do-ecossistema-industrial-e-de-serviços)
@@ -59,36 +65,38 @@ Desenvolver um dashboard interativo no Power BI, utilizando dados da base RAIS, 
 
 ## 🛠️ Tecnologias Utilizadas
 
-- Python (Google Colab)  
+- Python  
 - Power BI  
 - Microsoft Excel  
 - Microsoft Word  
-- Microsoft PowerPoint  
+- Microsoft PowerPoint
+- Claude Code
+- GitHub  
 
 ## 📸 Preview do Dashboard 
 
-- 📘 [Documentação Completa](https://github.com/ProTech-API/.github/blob/main/Docs/sãojosédoscamposdashboard.pbix)
+- 📘 file:///D:/Dashboard%20-%20PDF.pdf
 
 # Product Backlog
 
 | Rank | Prioridade | User Story                                                                                                                                              | Estimativa | Sprint |
 |------|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|------------|--------|
 | 1º   | Alta       | Quais são os principais setores industriais e de serviços presentes na região de São José dos Campos?                                                   | 18 dias    | 1      |
-| 2º   | Alta       | Quais tipos de atividades produtivas predominam (manufatura, tecnologia, logística, serviços especializados etc.)?                                      | 18 dias    | 1      |
-| 3º   | Média      | Quais são os principais macroprocessos produtivos identificados nas empresas da região?                                                                 | 18 dias    | 1      |
-| 4º   | Alta       | Quais são as principais empresas dos principais setores industriais e de serviços em São José dos Campos e região?                                      | -          | 2      |
-| 5º   | Alta       | Qual a relação entre os setores industriais presentes e o desenvolvimento tecnológico regional?                                                         | -          | 2      |
-| 6º   | Alta       | Como o ecossistema produtivo regional se conecta com inovação, tecnologia e desenvolvimento econômico?                                                  | -          | 2      |
-| 7º   | Média      |  Como esses setores estão distribuídos geograficamente no município e na região?                                                                        | -          | 2      |
-| 8°   | Média      | Quais oportunidades de atuação profissional podem ser identificadas para o engenheiro de produção nesse contexto? 
+| 2º   | Alta       | Quais tipos de atividades produtivas predominam (manufatura, tecnologia, logística, serviços especializados etc.)?                                      | 16 dias    | 1      |
+| 3º   | Média      | Quais são os principais macroprocessos produtivos identificados nas empresas da região?                                                                 | 15 dias    | 1      |
+| 4º   | Média      | Qual a relação entre os setores industriais presentes e o desenvolvimento tecnológico regional?                                                         | 18 dias    | 2      |
+| 5º   | Média      | Como o ecossistema produtivo regional se conecta com inovação, tecnologia e desenvolvimento econômico?                                                  | 10 dias    | 2      |
+| 6º   | Alta       | Como esses setores estão distribuídos geograficamente no município e na região?                                                                         | 16 dias    | 2      |
+| 7º   | Média      | Quais são as principais empresas dos principais setores industriais e de serviços em São José dos Campos e região?                                      | -          | 3      |
+| 8°   | Média      | Quais oportunidades de atuação profissional podem ser identificadas para o engenheiro de produção nesse contexto?                                       | -          | 3      |
   
 
 # Registro das Sprints
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
-| 01                | 27/04/2026 |concluído | [MVP](https://docs.google.com/document/d/1M5s7SU5bRekXxxLCeA3t_fk-9DoxTlX-LpxAY31qyZM/edit?usp=sharing)  |
-| 02                | 18/05/2026 | a fazer  | [MVP](MVP/sp2.md)  |
+| 01                | 27/04/2026 | concluído| [MVP](https://docs.google.com/document/d/1M5s7SU5bRekXxxLCeA3t_fk-9DoxTlX-LpxAY31qyZM/edit?usp=sharing)|
+| 02                | 24/05/2026 | Concluído| [MVP](MVP/sp2.md)  |
 | 03                | 08/06/2026 | a fazer  | [MVP](MVP/sp3.md)  |
 | Feira de Soluções | 18/06/2026 | a fazer  | [MVP](#)  |
 
