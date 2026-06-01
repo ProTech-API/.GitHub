@@ -95,11 +95,11 @@ Desenvolver um dashboard interativo no Power BI, utilizando dados da base RAIS, 
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
-| 01                | 27/04/2026 | concluído| [MVP](https://docs.google.com/document/d/1M5s7SU5bRekXxxLCeA3t_fk-9DoxTlX-LpxAY31qyZM/edit?usp=sharing)|
+| 01                | 27/04/2026 | concluído| [MVP]|(MVP/sp2.md) | 
 | 02                | 24/05/2026 | Concluído| [MVP](MVP/sp2.md)  |
 | 03                | 08/06/2026 | a fazer  | [MVP](MVP/sp3.md)  |
-| Feira de Soluções | 18/06/2026 | a fazer  | [MVP](#)  |
+| Feira de Soluções | 18/06/2026 | a fazer  | 
 
 ## 📄 Documentação
 
-- 📘 [Documentação Completa] (https://centropaulasouza-my.sharepoint.com/:u:/r/personal/guilherme_peratelli_aluno_cps_sp_gov_br/Documents/dashboardprotech2604.pbix?csf=1&web=1&e=EvqavT)
+- 📘 [Documentação Completa] 
