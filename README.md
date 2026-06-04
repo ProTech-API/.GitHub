@@ -1,7 +1,9 @@
 <img width="603" height="485" alt="image" src="https://github.com/user-attachments/assets/6ce135a2-b556-43db-a126-52816a9eacef" />
 
 
-> ProTech – "Projetar um futuro com ética".
+
+> *ProTech – Engenharia, Integração e Resoluções empresariais - Fatec São Jose dos Campos.*
+> 
 
 
 > # 📊 ProTech – Mapeamento do Ecossistema Industrial e de Serviços
