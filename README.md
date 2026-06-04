@@ -1,4 +1,5 @@
-<img width="1254" height="1254" alt="Logo Protech 3D" src="https://github.com/user-attachments/assets/e6435042-9e9c-4195-897f-7237eb889470" />
+<img width="603" height="485" alt="image" src="https://github.com/user-attachments/assets/6ce135a2-b556-43db-a126-52816a9eacef" />
+
 
 > ProTech – "Projetar um futuro com ética".
 
