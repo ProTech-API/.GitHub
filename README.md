@@ -45,7 +45,8 @@ A solução visa apoiar a tomada de decisão da Secretaria de Desenvolvimento, a
 |  Dev group  | Luís Guilherme Soares      |           [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/luis-guilherme-soares) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/)    
 
 
-<img width="1233" height="719" alt="image" src="https://github.com/user-attachments/assets/e7b70c15-eae5-4892-a996-f61d36b993da" />
+<img width="1329" height="746" alt="image" src="https://github.com/user-attachments/assets/ca6a3f9d-2ca7-4bad-bb16-ec927b9da0d3" />
+
 
 
 
