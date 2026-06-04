@@ -2,15 +2,15 @@
 
 ## 🎯 Objetivo do MVP
 > Descrever de forma clara qual é o propósito do MVP:  
-- Qual problema resolve? A resolução resolve: Responsável pelo enriquecimento de informações e dados, fornecendo suporte às pesquisas e à tomada de decisões dos clientes.
-- Qual valor será entregue ao usuário final? O valor entregue ao cliente é fundamentado em dados públicos governamentais, tratados e estruturados de forma a oferecer uma visualização mais estratégica, clara e objetiva para apoiar análises e tomadas de decisão
+- Qual problema resolve? *A resolução resolve: Responsável pelo enriquecimento de informações e dados, fornecendo suporte às pesquisas e à tomada de decisões dos clientes.*
+- Qual valor será entregue ao usuário final? *O valor entregue ao cliente é fundamentado em dados públicos governamentais, tratados e estruturados de forma a oferecer uma visualização mais estratégica, clara e objetiva para apoiar análises e tomadas de decisão*
 
 ---
 
 ## 📝 Descrição da Solução
 > Breve explicação do que será desenvolvido e entregue nesta etapa.  
-- Funcionalidades principais incluídas: Nesta primeira etapa da Sprint 1, será realizada a construção de um banco de dados para armazenamento, tratamento e organização das informações. Simultaneamente, será desenvolvido o layout do dashboard, responsável pela visualização e apresentação dos dados processados.
-- Limitações conhecidadas: Até então, é possível identificar que os dados concebidos pela cidade de Caçapava, apresentam dados pendentes, como a quantidade de vínculos estatutários.
+- Funcionalidades principais incluídas: *Nesta primeira etapa da Sprint 1, será realizada a construção de um banco de dados para armazenamento, tratamento e organização das informações. Simultaneamente, será desenvolvido o layout do dashboard, responsável pela visualização e apresentação dos dados processados.*
+- Limitações conhecidadas: *Até então, é possível identificar que os dados concebidos pela cidade de Caçapava, apresentam dados pendentes, como a quantidade de vínculos estatutários.*
 - Escopo reduzido: <img width="1461" height="821" alt="Screenshot 2026-04-25 195140" src="https://github.com/user-attachments/assets/dd2ee73d-ce24-44f9-aff5-f7f9dd371d05" />
   
 
