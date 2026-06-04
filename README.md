@@ -96,17 +96,17 @@ Desenvolver um dashboard interativo no Power BI, utilizando dados da base RAIS, 
 | 4º   | Média      | Qual a relação entre os setores industriais presentes e o desenvolvimento tecnológico regional?                                                         | 18 dias    | 2      |
 | 5º   | Média      | Como o ecossistema produtivo regional se conecta com inovação, tecnologia e desenvolvimento econômico?                                                  | 10 dias    | 2      |
 | 6º   | Alta       | Como esses setores estão distribuídos geograficamente no município e na região?                                                                         | 16 dias    | 2      |
-| 7º   | Média      | Quais são as principais empresas dos principais setores industriais e de serviços em São José dos Campos e região?                                      | -          | 3      |
-| 8°   | Média      | Quais oportunidades de atuação profissional podem ser identificadas para o engenheiro de produção nesse contexto?                                       | -          | 3      |
+| 7º   | Média      | Quais são as principais empresas dos principais setores industriais e de serviços em São José dos Campos e região?                                      | 6 dias     | 3      |
+| 8°   | Média      | Quais oportunidades de atuação profissional podem ser identificadas para o engenheiro de produção nesse contexto?                                       | 8 dias     | 3      |
   
 
 # Registro das Sprints e MVP's
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
-| 01                | 27/04/2026 | concluído| [MVP]|(MVP/sp2.md) | 
-| 02                | 24/05/2026 | Concluído| [MVP](MVP/sp2.md)  |
-| 03                | 08/06/2026 | a fazer  | [MVP](MVP/sp3.md)  |
+|      1°           | 27/04/2026 | concluído| [MVP](MVP/sp2.md)  | 
+|      2°           | 24/05/2026 | Concluído| [MVP](MVP/sp2.md)  |
+|      3°           | 16/06/2026 | a fazer  | [MVP](MVP/sp3.md)  |
 | Feira de Soluções | 18/06/2026 | a fazer  | 
 
 ## 📄 Documentação
