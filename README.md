@@ -12,7 +12,7 @@ No contexto deste projeto, a equipe ProTech desenvolve um dashboard interativo n
 
 > # 📸 - Acesse o nosso Dashboard interativo no App Power BI por este QR Code!
 
-<img width="190" height="217" alt="Dashboard - QR code" src="https://github.com/user-attachments/assets/862e2418-c27d-4e7e-8550-2aa8fb8d81e5" />
+                                 <img width="190" height="217" alt="Dashboard - QR code" src="https://github.com/user-attachments/assets/862e2418-c27d-4e7e-8550-2aa8fb8d81e5" />
 
 
 # Índice
@@ -91,7 +91,7 @@ Desenvolver um dashboard interativo no Power BI, utilizando dados da base RAIS, 
 | 8°   | Média      | Quais oportunidades de atuação profissional podem ser identificadas para o engenheiro de produção nesse contexto?                                       | -          | 3      |
   
 
-# Registro das Sprints
+# Registro das Sprints e MVP's
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
