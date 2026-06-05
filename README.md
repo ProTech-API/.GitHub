@@ -104,7 +104,7 @@ Desenvolver um dashboard interativo no Power BI, utilizando dados da base RAIS, 
 
 | Sprint            | Previsão   | Status   | Histórico |
 |-------------------|------------|----------|-----------|
-|      1°           | 27/05/2026 | Concluído| [MVP](MVP/sp2.md) |
+|      1°           | 27/04/2026 | Concluído| [MVP](MVP/sp2.md) |
 |      2°           | 24/05/2026 | Concluído| [MVP](MVP/sp2.md) |
 |      3°           | 16/06/2026 | a fazer  | [MVP](MVP/sp3.md) |
 | Feira de Soluções | 18/06/2026 
