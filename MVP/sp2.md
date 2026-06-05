@@ -36,9 +36,9 @@
 ## 📅 Sprint(s) Relacionadas
 | Sprint | Entregas Principais                          | Status   |
 |--------|----------------------------------------------|----------|
-| 1°     | Funcionalidades: Interação de dados e comparação da quantidade de vínculos ativos do ano de 2024, das cidades; São José dos Campos, Taubaté, Jacareí e Caçapava                       | Concluído|
-| 2°     | Funcionalidades: interação de dados e comparação da quantidade de vínculos ativos de 2022, 2023 e 2024, das cidades; São José dos Campos, Taubaté, Jacareí e Caçapava. Mapa interativo e gráfico sobre os principai setores industriais e também uma comparação anual do crescimento d vínculos ativos dos 3 anos.                  | Concluído|
-| 3°     | Funcionalidades: Comparação dos tipos de vínculos ativos; Total, CLT e estatutários.       | Concluído|                                       |
+| 1°     | Funcionalidades: **Interação de dados e comparação da quantidade de vínculos ativos do ano de 2024, das cidades; São José dos Campos, Taubaté, Jacareí e Caçapava**                       | Concluído|
+| 2°     | Funcionalidades: **Interação de dados e comparação da quantidade de vínculos ativos de 2022, 2023 e 2024, das cidades; São José dos Campos, Taubaté, Jacareí e Caçapava. Mapa interativo e gráfico sobre os principai setores industriais e também uma comparação anual do crescimento d vínculos ativos dos 3 anos.**                  | Concluído|
+| 3°     | Funcionalidades: **Comparação dos tipos de vínculos ativos; Total, CLT e estatutários.**       | Concluído|                                       |
 
 ---
 
