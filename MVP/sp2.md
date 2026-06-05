@@ -29,7 +29,6 @@
 | ID  | User Story                                                                 | Prioridade | Estimativa |
 |-----|-----------------------------------------------------------------------------|------------|------------|
 | US1 | Como Gestor da Secretaria de Inovação e Desenvolvimento de São José dos Campos, quero ter acesso á um Dashboard interativo que apresente dados e gráficos empregatícios e geográficos que envolva o desenvolvimento tecnológico e industrial da cidade de São José dos Campos e região, para que possamos fazer pesquisas e comparações, tendo em vista que exite uma grande demanada de investimento tecnológico e industrial em São José dos Campos e região.         | Alta       | 9 pontos   |
-
 | US2 | Como Analista de Desenvolvimento Econômico, quero fazer pesquisas, utilizando o dashboard, caso precise identificar regiões e setores com maior crescimento produtivo econômico na cidade e região, para que possamos fazer um bom investimento utilizando os dados apresentados.        | Média      | 9 pontos   |
 
 ---
